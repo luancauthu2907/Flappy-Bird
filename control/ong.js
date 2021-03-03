@@ -1,7 +1,7 @@
 
-export let ongcong =[
-    {
-        x:1260,
-        y:0
-    }
-];
+export let ongcong =[{
+    x:1200,
+    y:0,
+
+},];
+
