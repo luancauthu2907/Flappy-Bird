@@ -4,12 +4,45 @@
   font-weight: normal;
   src: local("SEGA LOGO FONT"), url("./font/SEGA.woff") format("woff");
 }
-body {
+.container {
   display: flex;
+  position: relative;
 }
-p {
+.container p {
   font-family: "SEGA LOGO FONT";
   font-size: 30px;
   color: blue;
   text-align: center;
+}
+.containerPlay {
+  background: linear-gradient(to right, rgb(57, 154, 192), rgb(74, 104, 90));
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: 200px;
+  left: 500px;
+  border: 2px solid blue;
+  border-radius: 20px;
+  text-align: center;
+  animation: roll 1s linear alternate;
+}
+@keyframes roll {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes roll2 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+    display: none;
+  }
+}
+.exit {
+  animation: roll2 1s linear forwards;
 }

@@ -3,7 +3,6 @@ import {ongcong} from "./ong.js";
 let canvas =document.getElementById("gameZone");
  let context= canvas.getContext("2d");
 let diem =document.getElementById("score");
-let btnStart=document.querySelector(".btnStart");
 let diem1=0;
 ;let dem2=0.5;
 let speed=1; 
@@ -45,14 +44,14 @@ const run = () =>
             audio.pause();
              return;        
          }    
-         if(((bird1.x-10)>=(ongcong[i].x-ongtren.width))&&((bird1.x)<=(ongcong[i].x+ongtren.width))&&(((bird1.y+conchim.height)>=(ongcong[i].y+khoangcachong))||((bird1.y+conchim.height)<=(ongtren.height-(-ongcong[i].y+700)))))   
+         if(((bird1.x)>=(ongcong[i].x-ongtren.width))&&((bird1.x)<=(ongcong[i].x+ongtren.width))&&(((bird1.y+conchim.height)>=(ongcong[i].y+khoangcachong))||((bird1.y+conchim.height)<=(ongtren.height-(-ongcong[i].y+700)))))   
          {
              audio.pause();
               return;  
          }  
          if(bird1.x ==ongcong[i].x)  
          {
-            audio2.play();
+            audio2.play(1000);
             setTimeout(function(){
                 audio2.pause();
             },1000);
@@ -80,15 +79,11 @@ const run = () =>
     }
     audio.play();       
 }
-document.addEventListener("click",function()
+document.addEventListener("keydown",function()
 {
     for(var j=0 ;j<=3;j++)
     {
         bird1.y-=20;   
     }
 });        
-
-btnStart.addEventListener("click",function(){
-    run();
-    document.querySelector(".containerPlay").classList.add("exit");
-})
+run(); 
